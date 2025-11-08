@@ -7,14 +7,14 @@ HEIGHT = 800
 # colors.
 # if you find it more suitable, change this dictionary to standalone constants like: RED = (255, 0, 0)
 COLORS = {
-    'RED': (255, 0, 0),           # closed nodes
-    'GREEN': (0, 255, 0),         # open nodes
-    'BLUE': (0, 0, 255),          # start node
-    'YELLOW': (255, 255, 0),      # end node
-    'WHITE': (255, 255, 255),     # unvisited nodes
-    'BLACK': (0, 0, 0),           # barrier
-    'PURPLE': (128, 0, 128),      # path
-    'ORANGE': (255, 165 ,0),      # nodes being considered
-    'GREY': (128, 128, 128),      # grid lines
-    'TURQUOISE': (64, 224, 208)   # neighbor nodes
+    "WHITE": (46, 46, 51),        # default cell background
+    "BLACK": (13, 13, 15),        # barriers
+    "RED": (90, 24, 154),         # closed set
+    "GREEN": (157, 78, 221),      # open set
+    "ORANGE": (247, 37, 133),     # start node
+    "YELLOW": (76, 201, 240),     # end node
+    "PURPLE": (199, 125, 255),    # final path highlight
 }
+
+BACKGROUND_COLOR = (26, 26, 29)   
+GRID_LINE_COLOR = (68, 68, 68)    

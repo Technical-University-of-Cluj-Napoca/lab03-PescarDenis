@@ -36,34 +36,26 @@ class Grid:
         return grid
 
     def draw_grid_lines(self) -> None:
-        """
-        Draw the grid lines on the Pygame window.
-        Returns:
-            None
-        """
-        spot_width = self.width // self.rows  # gap between lines
-        spot_height = self.height // self.cols  # gap between lines
+        spot_width = self.width // self.cols
+        spot_height = self.height // self.rows
+
         for i in range(self.rows):
-            # draw horizontal lines
-            pygame.draw.line(self.win, COLORS['GREY'], (0, i * spot_height), (self.width, i * spot_height))
+            pygame.draw.line(self.win, GRID_LINE_COLOR, (0, i * spot_height), (self.width, i * spot_height))
+
         for j in range(self.cols):
-            # draw vertical lines
-            pygame.draw.line(self.win, COLORS['GREY'], (j * spot_width, 0), (j * spot_width, self.height))
+            pygame.draw.line(self.win, GRID_LINE_COLOR, (j * spot_width, 0), (j * spot_width, self.height))
+
 
     def draw(self) -> None:
-        """
-        Draw the entire grid and its spots on the Pygame window.
-        Returns:
-            None
-        """
-        self.win.fill(COLORS['WHITE'])  # fill the window with white color
+        self.win.fill(BACKGROUND_COLOR)
 
         for row in self.grid:
             for spot in row:
-                spot.draw(self.win)   # draw each spot
+                spot.draw(self.win)
 
-        self.draw_grid_lines()        # draw the grid lines          
-        pygame.display.update()       # update the display
+        self.draw_grid_lines()
+        pygame.display.update()
+
 
     def get_clicked_pos(self, pos: tuple[int, int]) -> tuple[int, int]:
         """
